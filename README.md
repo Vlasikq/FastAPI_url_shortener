@@ -10,9 +10,9 @@
 - **Регистрация и аутентификация пользователей**  
   - **Endpoint:** `POST /users/register` и `POST /users/login`  
   - **Описание:** Регистрация нового пользователя с хешированием пароля, аутентификация и получение JWT-токена.  
-  - ![register](img\register.jpg)
-  - ![login](img\login.jpg)
-  - ![auth](img\auth.jpg)
+  - ![register](img/register.jpg)
+  - ![login](img/login.jpg)
+  - ![auth](img/auth.jpg)
 
 - **Создание короткой ссылки**  
   - **Endpoint:** `POST /links/shorten`  
@@ -22,14 +22,14 @@
   - **Обновление и удаление ссылки**  
   - **Endpoint:** `PUT /links/{short_code}` и `DELETE /links/{short_code}`  
   - **Описание:** Позволяют обновить параметры ссылки (например, продлить время жизни) или удалить её (доступно для зарегистрированного пользователя).  
-  - ![upd_link](img\upd_link.jpg)
-  - ![delete_link](img\delete_link.jpg)
+  - ![upd_link](img/upd_link.jpg)
+  - ![delete_link](img/delete_link.jpg)
 
 
 - **Получение статистики ссылки**  
   - **Endpoint:** `GET /links/{short_code}/stats`  
   - **Описание:** Возвращает информацию о ссылке: оригинальный URL, дату создания, количество переходов, дату последнего перехода.  
-  - ![link_stats](img\link_stats.jpg)
+  - ![link_stats](img/link_stats.jpg)
 
 
 ---
@@ -38,14 +38,14 @@
 
 Проект использует PostgreSQL для хранения данных. Структура базы данных выглядит следующим образом:
 
-- ![tables](img\tables.jpg)
+- ![tables](img/tables.jpg)
 
 - **Таблица `users`:**  
   - `id` (Integer, Primary Key)  
   - `username` (String, уникальный)  
   - `email` (String, уникальный, если добавите)  
   - `password_hash` (String)  
-  - ![alt text](img\t_user.jpg)
+  - ![alt text](img/t_user.jpg)
 
 - **Таблица `links`:**  
   - `id` (Integer, Primary Key)  
@@ -56,7 +56,7 @@
   - `expires_at` (DateTime, опционально)  
   - `click_count` (Integer, по умолчанию 0)  
   - `last_clicked` (DateTime, опционально)
-  - ![alt text](img\t_link.jpg)
+  - ![alt text](img/t_link.jpg)
 
 
 - **Таблица `link_previews`:**  
